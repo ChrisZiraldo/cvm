@@ -5,10 +5,17 @@ CMake Version Manager (cvm)
 
 Please feel free to add more versions to the versions.json file as you need them.
 
-#### On OSX:
+#### OSX Setup:
 Please have [Homebrew](https://brew.sh/) installed and run:
 
 `brew install jq` 
+
+#### Linux Setup:
+You will need the jq library installed:
+
+`sudo apt-get install jq`
+
+#### Run Script:
 
 From terminal, type:
 
@@ -21,13 +28,11 @@ or clone the repo and run:
 `./cvm.sh <cmake version>`
 
 
-It will download cmake versions <cmake version> into `.cvm` folder in your home directory, extract it, and move it into an "active" version folder and all you have to do is add this line to your .bash_profile or .zshrc file:
+It will download cmake versions <cmake version> into `.cvm` folder in your home directory, extract it, and move it into an "active" version folder. 
+
+All you have to do is add this line to your .bash_profile, .zshrc, .bashrc or .profile
 
 `source $HOME/.cvm/cvm_source`
 
-#### On Linux:
-You will need the jq library installed:
+Alternativly if you only want this sourced in one instance of a shell you can just run the source line to temporarily add it to your $PATH
 
-`sudo apt-get install jq`
-
-It should work the same way as on OSX, but it's not verified
