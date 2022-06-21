@@ -70,7 +70,11 @@ else
 	echo "Setting up cmake version: ${version}"
 	pushd ${cvm_home} >/dev/null
 	rm -r ${cvm_home}/"cmake-active"/bin
+	rm -r ${cvm_home}/"cmake-active"/share
+	rm -r ${cvm_home}/"cmake-active"/man
 	cp -r ${folder_name}/bin ${cvm_home}/"cmake-active"
+	cp -r ${folder_name}/share ${cvm_home}/"cmake-active"
+	cp -r ${folder_name}/man ${cvm_home}/"cmake-active"
 	popd >/dev/null
 
 	cmake_bin=${cvm_home}/"cmake-active"/bin/
