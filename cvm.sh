@@ -75,8 +75,8 @@ then
 else
 	#untested on Linux
 	pushd ${cvm_home} > /dev/null
-	rm -r ${cvm_home}/"cmake-active"/cmake
-	cp -r ${folder_name}/cmake ${cvm_home}/"cmake-active"
+	rm -r ${cvm_home}/"cmake-active"/bin
+	cp -r ${folder_name}/bin ${cvm_home}/"cmake-active"
 	popd > /dev/null
 
 	cmake_bin=${cvm_home}/"cmake-active"/bin/
