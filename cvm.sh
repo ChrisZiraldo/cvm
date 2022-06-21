@@ -30,9 +30,8 @@ fi
 
 folder_name=cmake-${version}
 file_name=${folder_name}.tar.gz
-
 cvm_home=${HOME}/.cvm
-#echo cvm_home is ${cvm_home}
+
 if [ ! -d "${cvm_home}" ]; then
 	echo "creating ${cvm_home}"
 	mkdir ${cvm_home}
@@ -66,7 +65,6 @@ if [ "${platform}" = "Darwin" ]; then
 
 	cmake_bin=${cvm_home}/"cmake-active"/CMake.app/Contents/bin/
 else
-	#untested on Linux
 	echo "Setting up cmake version: ${version}"
 	pushd ${cvm_home} >/dev/null
 	rm -r ${cvm_home}/"cmake-active"/bin >/dev/null
