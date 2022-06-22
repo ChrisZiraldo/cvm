@@ -12,14 +12,17 @@ if [ "$unamestr" == 'Linux' ]; then
 elif [ "$unamestr" == 'Darwin' ]; then
 	platform='Darwin'
 
-	echo Install Homebrew
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	if ! brew ls --versions jq >/dev/null; then
 
-	echo Validate Homebrew
-	brew doctor
+		echo Install Homebrew
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	echo Install Homebrew Packages
-	brew install jq
+		echo Validate Homebrew
+		brew doctor
+
+		echo Install Homebrew Packages
+		brew install jq
+	fi
 
 fi
 
@@ -41,8 +44,15 @@ fi
 
 if [ ! -d "${cvm_home}/${folder_name}" ]; then
 	pushd ${cvm_home} >/dev/null
-	curl -L -o 'cvm' ${url}
+	curl -s -L -o 'cvm' ${url}
+	chmod +x 'cvm'
 	popd >/dev/null
+fi
+
+if [ "${platform}" = "Darwin" ]; then
+	cmake_bin=${cvm_home}/"cmake-active"/CMake.app/Contents/bin/
+else
+	cmake_bin=${cvm_home}/"cmake-active"/bin/
 fi
 
 if [[ "$PATH" != *".cvm"* ]]; then
