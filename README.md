@@ -9,13 +9,13 @@ Please feel free to add more versions to the versions.json file as you need them
 Paste this in a macOS Terminal or Linux shell prompt:
 
 ```
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/install.sh)"
 ```
 
 All you have to do is add this line to your .bash_profile, .zshrc, .bashrc or .profile.
 
 ```
-$ source $HOME/.cvm/cvm_source
+source $HOME/.cvm/cvm_source
 ```
 
 #### Usage:
