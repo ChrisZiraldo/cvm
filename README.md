@@ -12,7 +12,7 @@ Paste this in a macOS Terminal or Linux shell prompt:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/install.sh)"
 ```
 
-All you have to do is add this line to your .bash_profile, .zshrc, .bashrc or .profile.
+After the install is completed add this line to your .bash_profile, .zshrc, .bashrc or .profile.
 
 ```
 source $HOME/.cvm/cvm_source
@@ -24,8 +24,8 @@ source $HOME/.cvm/cvm_source
 cvm <cmake version>
 ```
 
-It will download cmake versions <cmake version> into `.cvm` folder in your home directory setting it as the current active version.
+It will download cmake versions <cmake version> into the `.cvm` folder in your home directory setting it as the current active version.
 
 
 #### Uninstall:
-Remove source from prifile and delete .cvm folder in your home directory.
+Remove source from prifile and delete the `.cvm` folder in your home directory.
