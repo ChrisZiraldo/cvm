@@ -67,7 +67,7 @@ if [ "${platform}" = "Darwin" ]; then
 else
 	echo "Setting up cmake version: ${version}"
 	pushd ${cvm_home} >/dev/null
-	rm -r ${cvm_home}/"cmake-active"/bin dev/null 2>/
+	rm -r ${cvm_home}/"cmake-active"/bin 2>/dev/null
 	rm -r ${cvm_home}/"cmake-active"/share 2>/dev/null
 	rm -r ${cvm_home}/"cmake-active"/man 2>/dev/null
 	cp -r ${folder_name}/bin ${cvm_home}/"cmake-active"
