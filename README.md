@@ -5,34 +5,27 @@ CMake Version Manager (cvm)
 
 Please feel free to add more versions to the versions.json file as you need them.
 
-#### OSX Setup:
-Please have [Homebrew](https://brew.sh/) installed and run:
+#### Install:
+Paste this in a macOS Terminal or Linux shell prompt:
 
-`brew install jq` 
+```
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/install.sh)"
+```
 
-#### Linux Setup:
-You will need the jq library installed:
+All you have to do is add this line to your .bash_profile, .zshrc, .bashrc or .profile.
 
-`sudo apt-get install jq`
+```
+$ source $HOME/.cvm/cvm_source
+```
 
-#### Run Script:
+#### Usage:
 
-From terminal, type:
+```
+cvm <cmake version>
+```
 
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/cvm.sh)" -s <cmake version>`
-
-or clone the repo and run:
-
-`chmod +x cvm.sh`
-
-`./cvm.sh <cmake version>`
+It will download cmake versions <cmake version> into `.cvm` folder in your home directory setting it as the current active version.
 
 
-It will download cmake versions <cmake version> into `.cvm` folder in your home directory, extract it, and move it into an "active" version folder. 
-
-All you have to do is add this line to your .bash_profile, .zshrc, .bashrc or .profile
-
-`source $HOME/.cvm/cvm_source`
-
-Alternativly if you only want this sourced in one instance of a shell you can just run the source line to temporarily add it to your $PATH
-
+#### Uninstall:
+Remove source from prifile and delete .cvm folder in your home directory.
