@@ -50,9 +50,9 @@ if [ ! -d "${cvm_home}/${folder_name}" ]; then
 fi
 
 if [ "${platform}" = "Darwin" ]; then
-	cmake_bin=${cvm_home}/"cmake-active"/CMake.app/Contents/bin/
+	cmake_bin=${cvm_home}/"cmake-active"/CMake.app/Contents/bin
 else
-	cmake_bin=${cvm_home}/"cmake-active"/bin/
+	cmake_bin=${cvm_home}/"cmake-active"/bin
 fi
 
 if [[ "$PATH" != *".cvm"* ]]; then
