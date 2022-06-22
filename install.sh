@@ -59,5 +59,5 @@ if [[ "$PATH" != *".cvm"* ]]; then
 	echo "export PATH=${cmake_bin}:${cvm_home}:\${PATH}" >${cvm_home}/cvm_source
 	echo "Done! Please place the following line in your .bash_profile, .zshrc, .bashrc or .profile"
 	echo
-	echo "	source $HOME/.cvm/cvm_source"
+	echo "source $HOME/.cvm/cvm_source"
 fi
