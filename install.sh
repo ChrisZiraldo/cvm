@@ -60,4 +60,5 @@ if [[ "$PATH" != *".cvm"* ]]; then
 	echo "Done! Please place the following line in your .bash_profile, .zshrc, .bashrc or .profile"
 	echo
 	echo "source $HOME/.cvm/cvm_source"
+	echo
 fi
