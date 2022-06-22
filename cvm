@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -z "$1" ]; then
+	echo Must specify a valid version of cmake eg. cvm 3.19.7
+	exit 1
+fi
+
 platform='unknown'
 unamestr=$(uname)
 
