@@ -37,12 +37,6 @@ folder_name=cmake-${version}
 file_name=${folder_name}.tar.gz
 cvm_home=${HOME}/.cvm
 
-if [ ! -d "${cvm_home}" ]; then
-	echo "creating ${cvm_home}"
-	mkdir ${cvm_home}
-	mkdir ${cvm_home}/"cmake-active"
-fi
-
 if [ ! -d "${cvm_home}/${folder_name}" ]; then
 	echo downloading cmake version ${version}
 	echo from: ${url}
@@ -83,13 +77,5 @@ else
 	cmake_bin=${cvm_home}/"cmake-active"/bin/
 fi
 
-if [[ "$PATH" != *".cvm"* ]]; then
-	echo "export PATH=${cmake_bin}:\${PATH}" >${cvm_home}/cvm_source
-	echo "Done! Please place the following line in your .bash_profile or .zshrc"
-	echo
-	echo "source $HOME/.cvm/cvm_source"
-
-else
-	echo "Done!"
-	cmake --version
-fi
+echo "Done!"
+cmake --version
