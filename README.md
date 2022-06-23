@@ -1,5 +1,6 @@
 
 # Cmake Version Manager
+![Platforms](https://img.shields.io/badge/Platforms-OSX%20%7C%20Linux-blue)
 
 cvm is a CMake Version Manager that downloads a specific cmake version and sets it as the active version of cmake. When you want to change versions just run the command again to switch it up!
 
