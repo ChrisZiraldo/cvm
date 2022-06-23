@@ -36,4 +36,4 @@ This will download the specified version of cmake into the .cvm folder in your h
 
 
 ## Uninstall
-Remove source from prifile and delete the .cvm folder in your home directory.
+Remove source from profile and delete the .cvm folder in your home directory.
