@@ -2,7 +2,7 @@
 # Cmake Version Manager
 ![Platforms](https://img.shields.io/badge/Platforms-OSX%20%7C%20Linux-blue)
 
-cvm is a CMake Version Manager that downloads a specific cmake version and sets it as the active version of cmake. When you want to change versions just run the command again to switch it up!
+cvm is a command line tool that downloads a specific cmake version and sets it as your active version. When you want to change versions just run the command again and cvm will handle downloading and switching active versions.
 
 Please feel free to add more versions to the versions.json file as you need them.
 
@@ -22,7 +22,7 @@ source $HOME/.cvm/cvm_source
 ```
 
 ## Usage
-##### Get available versions:
+##### List available versions:
 ```
 cvm list
 ```
@@ -31,8 +31,6 @@ cvm list
 ```
 cvm <cmake version>
 ```
-
-This will download the specified version of cmake into the .cvm folder in your home directory and set it as the current active version. If cvm already has the specified version downloaded it will set that as the active version.
 
 
 ## Uninstall
