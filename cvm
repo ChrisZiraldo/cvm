@@ -25,6 +25,14 @@ if [ "$platform" == 'unknown' ]; then
 	exit 1
 fi
 
+if [ $1 == 'list' ]; then
+	echo Available Versions:
+
+	echo $(curl -s https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/versions.json | jq -r '.'\"$platform\"'[] | .version') | tr " " "\n"
+
+	exit 0
+fi
+
 version=$1
 url=$(curl -s https://raw.githubusercontent.com/ChrisZiraldo/cvm/master/versions.json | jq -r '.'\"$platform\"'[] | select(.version=='\"$version\"') | .url')
 
@@ -56,26 +64,25 @@ if [ ! -d "${cvm_home}/${folder_name}" ]; then
 fi
 
 if [ "${platform}" = "Darwin" ]; then
-	echo "Setting up cmake version: ${version}"
-	pushd ${cvm_home} >/dev/null
 	rm -r ${cvm_home}/"cmake-active"/CMake.app 2>/dev/null
-	cp -r ${folder_name}/CMake.app ${cvm_home}/"cmake-active"
+	pushd ${cvm_home}/"cmake-active" >/dev/null
+	ln -s ${cvm_home}/${folder_name}/CMake.app CMake.app
 	popd >/dev/null
 
 	cmake_bin=${cvm_home}/"cmake-active"/CMake.app/Contents/bin/
 else
-	echo "Setting up cmake version: ${version}"
-	pushd ${cvm_home} >/dev/null
 	rm -r ${cvm_home}/"cmake-active"/bin 2>/dev/null
 	rm -r ${cvm_home}/"cmake-active"/share 2>/dev/null
 	rm -r ${cvm_home}/"cmake-active"/man 2>/dev/null
-	cp -r ${folder_name}/bin ${cvm_home}/"cmake-active"
-	cp -r ${folder_name}/share ${cvm_home}/"cmake-active"
-	cp -r ${folder_name}/man ${cvm_home}/"cmake-active"
+	pushd ${cvm_home}/"cmake-active" >/dev/null
+	ln -s ${cvm_home}/${folder_name}/bin bin
+	ln -s ${cvm_home}/${folder_name}/share share
+	ln -s ${cvm_home}/${folder_name}/man man
 	popd >/dev/null
 
 	cmake_bin=${cvm_home}/"cmake-active"/bin/
 fi
 
-echo "Done!"
-cmake --version
+echo -n "Active "
+version=$(cmake --version)
+echo ${version%$'\n'*}

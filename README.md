@@ -22,12 +22,17 @@ source $HOME/.cvm/cvm_source
 ```
 
 ## Usage
+##### Get available versions:
+```
+cvm list
+```
 
+##### Change version:
 ```
 cvm <cmake version>
 ```
 
-It will download the specified version of cmake into the .cvm folder in your home directory and set it as the current active version.
+This will download the specified version of cmake into the .cvm folder in your home directory and set it as the current active version. If cvm already has the specified version downloaded it will set that as the active version.
 
 
 ## Uninstall
